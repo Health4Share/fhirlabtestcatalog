@@ -1,0 +1,1 @@
+### [Lab Test Catalog - FHIR Logical Model](labtestcatalog.html)
