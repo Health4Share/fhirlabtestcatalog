@@ -1,4 +1,4 @@
-# fhir-labtestcatalog
+# FHIR Lab Test Catalog
 
 *An OO-on-FHIR FLame*
 
