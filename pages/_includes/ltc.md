@@ -1,4 +1,4 @@
-###Lab Test Catalog
+### Lab Test Catalog
 
 - [FHIR Logical Model](labtestcatalog.html)
 - [EDOS Mapping](labtestcatalog-mappings.html#edos)
