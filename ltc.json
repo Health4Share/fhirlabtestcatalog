@@ -1,0 +1,37 @@
+{
+	"tool": "jekyll",
+	"paths": {
+		"resources": "resources",
+		"pages": "pages",
+		"temp": "temp",
+		"output": "output",
+		"qa": "qa",
+		"txCache": "txCache",
+		"specification": "http://hl7-fhir.github.io/"
+	},
+	"extraTemplates": [
+		"mappings"
+	],
+	"defaults": {
+		"Any": {
+			"template-format": "instance-template-format.html",
+			"template-base": "instance-template-base.html"
+		},
+		"StructureDefinition": {
+			"template-base": "instance-template-sd.html",
+			"template-defns": "instance-template-sd-definitions.html",
+			"template-mappings": "instance-template-sd-mappings.html"
+		}
+	},
+	"canonicalBase": "http://hl7.org/fhir/us/lab",
+	"source": "ltc.xml",
+	"spreadsheets": [],
+	"resources": {
+		"StructureDefinition/labtestcatalog": {
+			"source": "ltc-logical.xml",
+			"defns": "labtestcatalog-definitions.html",
+			"base": "labtestcatalog.html",
+			"mappings": "labtestcatalog-mappings.html"
+		}
+	}
+}
