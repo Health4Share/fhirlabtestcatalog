@@ -1,0 +1,1870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file://Mac/Home/Documents/FHIR/build/schema/structuredefinition.xsd">
+	<id value="labtestcatalog"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">to do</div>
+	</text>
+	<url value="http://hl7.org/fhir/us/lab/StructureDefinition/labtestcatalog"/>
+	<name value="LabTestCatalog"/>
+	<display value="Lab Test Catalog"/>
+	<status value="draft"/>
+	<publisher value="Health Level Seven International fhir"/>
+	<contact>
+		<telecom>
+			<system value="other"/>
+			<value value="http://hl7.org/fhir"/>
+		</telecom>
+	</contact>
+	<date value="2016-08-28T20:28:30-07:00"/>
+	<description value="Logical Model: The catalog is the set of IVD testing services offered by a clinical lab organization."/>
+	<requirements value="Requirements."/>
+	<fhirVersion value="1.7.0"/>
+	<mapping>
+		<identity value="lcsd"/>
+		<uri value="http://wiki.ihe.net/index.php/Laboratory_Code_Sets_Distribution"/>
+		<name value="Mapping to IHE Laboratory Code Sets Distribution"/>
+	</mapping>
+	<mapping>
+		<identity value="mapcomments"/>
+		<uri value="http://acme.org"/>
+		<name value="Mapping Comments"/>
+	</mapping>
+	<mapping>
+		<identity value="edos"/>
+		<uri value="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=151"/>
+		<name value="Mapping to EDOS R2"/>
+	</mapping>
+	<mapping>
+		<identity value="v2"/>
+		<uri value="http://hl7.org/v2"/>
+		<name value="HL7 v2 Mapping"/>
+	</mapping>
+	<kind value="logical"/>
+	<abstract value="false"/>
+	<type value="LabTestCatalog"></type>
+	 <baseDefinition
+                  value="http://hl7.org/fhir/StructureDefinition/Element"/>
+  <derivation value="specialization"/>
+	<differential>
+		<element id="LabTestCatalog">
+			<path value="LabTestCatalog"/>
+			<short value="Lab service master file"/>
+			<definition value="The catalog is the set of IVD testing services offered by a clinical lab organization."/>
+			<comments value="This level could be represented by a resource referencing all the DataElements describing lab IVD testing services?   Or the catalog could be represented only by the common root to the urls of the testing services resources?"/>
+			<min value="0"/>
+			<max value="1"/>
+<!--			
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="item in LCSD"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="comments"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="item ineDOS"/>
+			</mapping>
+			
+-->		
+        </element>
+		<element id="LabTestCatalog.publisher">
+			<path value="LabTestCatalog.publisher"/>
+			<short value="Identification of catalog supplier"/>
+			<definition value="Bundle or List Resource -Catalog metadata."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MSH-4"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="MSH-4 Sending Facility eH : not always the same"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.identifier">
+			<path value="LabTestCatalog.identifier"/>
+			<short value="service identifier (for ordering)"/>
+			<definition value="Bundle or List Resource -Catalog metadata."/>
+			<requirements value="LOINC (withexceptions)eH; More likely local identifer."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Identifier"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-2"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="LCSD overloads MFI-2 to add this item"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-2, MCP-2,:Producer&#39;s Service/Test/Observation"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.language">
+			<path value="LabTestCatalog.language"/>
+			<short value="catalog main language"/>
+			<definition value="Bundle or List Resource -Catalog metadata."/>
+			<comments value="maps to  base class Resource.language."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<binding>
+				<strength value="extensible"></strength>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/languages"/>
+			</binding>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-2"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="LCSD overloads MFI-2 to add this item"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.version">
+			<path value="LabTestCatalog.version"/>
+			<short value="catalog version"/>
+			<definition value="Bundle or List Resource -Catalog metadata."/>
+			<comments value="In the shared repository paradigm, version &amp; date are not really needed at the catalog level. Needed on DataElement."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-2"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="LCSD overloads MFI-2 to add this item"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.updateDate">
+			<path value="LabTestCatalog.updateDate"/>
+			<short value="catalog last update"/>
+			<definition value="Bundle or List Resource -Catalog metadata."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="dateTime"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-4"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry">
+			<path value="LabTestCatalog.entry"/>
+			<short value="Catalog entry"/>
+			<definition value="Item in catalog"/>
+			<alias value="Lab Service Item"/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="BackboneElement"/>
+			</type>
+			<mapping>
+				<identity value="v2"/>
+				<map value="down"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.sequence">
+			<path value="LabTestCatalog.entry.sequence"/>
+			<comments value="EH: needed to preserve order, Use case  for consistent human display , unless choose some other mechanism to group or order like alphabetical."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="positiveInt"/>
+			</type>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="sequence number"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-1 Sequence Number - Test/Observ"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.code">
+			<path value="LabTestCatalog.entry.code"/>
+			<short value="service identifier (for ordering)"/>
+			<definition value="service identifier (for ordering)."/>
+			<comments value="OM1-7 maps to OM1.2 inedos  and is likely going to be a LOINC codes  see http://healthedatainc.com/go-ftp/publish/dataelement-labtestmaster-example.html."/>
+			<requirements value="LOINC (withexceptions)."/>
+			<min value="1"/>
+			<max value="*"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+<binding>
+	<strength value="example"></strength>
+	<valueSetUri value="http://hl7.org/fhir/ValueSet/diagnostic-requests"></valueSetUri>
+</binding>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-2"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="coded withexceptions"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-2, OM1-7,MCP-2,:Producer&#39;s Service/Test/Observation"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.name">
+			<path value="LabTestCatalog.entry.name"/>
+			<short value="service identifier (for ordering)"/>
+			<definition value="service identifier (for ordering)."/>
+			<requirements value="LOINC (withexceptions)."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-2"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="coded withexceptions"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-2, OM1-7,MCP-2,:Producer&#39;s Service/Test/Observation"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.orderable">
+			<path value="LabTestCatalog.entry.orderable"/>
+			<short value="Orderability"/>
+			<definition value="Orderability."/>
+			<requirements value="Boolean."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="boolean"/>
+			</type>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-12:Orderability"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.otherName">
+			<path value="LabTestCatalog.entry.otherName"/>
+			<short value="synonyms for the service name"/>
+			<definition value="synonyms for the service name."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-8"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-51"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.performingLab">
+			<path value="LabTestCatalog.entry.performingLab"/>
+			<short value="producer identifier"/>
+			<definition value="producer identifier."/>
+			<comments value="service producer is distinct from DataElement.publisher."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Reference"/>
+				<profile value="http://hl7.org/fhir/us/daf/StructureDefinition/daf-core-organization"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-5"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="required"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-5"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.type">
+			<path value="LabTestCatalog.entry.type"/>
+			<short value="nature of the service"/>
+			<definition value="nature of the service."/>
+			<comments value="see HL70174 value set eH: this may be obvious if have reference to other catalog items and not needed."/>
+			<requirements value="test, panel, superset, …."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="code"/>
+			</type>
+			<binding>
+				<strength value="required"></strength>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/v2-0174"></valueSetUri>
+			</binding>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-18"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="required"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-18"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.description">
+			<path value="LabTestCatalog.entry.description"/>
+			<short value="description of the service"/>
+			<definition value="description of the service."/>
+			<requirements value="[0..1], for display."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="markdown"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-6"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.schedule">
+			<path value="LabTestCatalog.entry.schedule"/>
+			<short value="service performance schedule"/>
+			<definition value="service performance schedule."/>
+			<comments value="example: &quot;Monday, Wednesday&quot;."/>
+			<requirements value="[0..*], string."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Timing"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-40"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.OrderAlone">
+			<path value="LabTestCatalog.entry.OrderAlone"/>
+			<short value="serviceexclusive"/>
+			<definition value="serviceexclusive."/>
+			<requirements value="[0..1], HL70919."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="boolean"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-48"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.category">
+			<path value="LabTestCatalog.entry.category"/>
+			<short value="diagnostic service sector ID"/>
+			<definition value="diagnostic service sector ID."/>
+			<comments value="example: MCB: mycobacteriology."/>
+			<requirements value="[0..1], HL70074."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<binding>
+				<strength value="extensible"></strength>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/v2-0074"></valueSetUri>
+			</binding>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-49"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.patientPrep">
+			<path value="LabTestCatalog.entry.patientPrep"/>
+			<short value="patient preparation"/>
+			<definition value="patient preparation."/>
+			<comments value="example: &quot;patient fasting for at least 12 hours&quot;."/>
+			<requirements value="[0..*], textual."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-37"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.interpretation">
+			<path value="LabTestCatalog.entry.interpretation"/>
+			<short value="interpretation of observations"/>
+			<definition value="interpretation of observations."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<requirements value="[0..1], textual."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-32"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.contraindications">
+			<path value="LabTestCatalog.entry.contraindications"/>
+			<short value="contraindications to service"/>
+			<definition value="contraindications to service."/>
+			<requirements value="[0..*], coded 9999."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-33"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.priorResults">
+			<path value="LabTestCatalog.entry.priorResults"/>
+			<short value="accompany order with prior results"/>
+			<definition value="accompany order with prior results."/>
+			<comments value="example: &quot;send the prior results of CBC in past 60 days&quot;."/>
+			<requirements value="[0..*], textual."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="boolean"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-53"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specialInstructions">
+			<path value="LabTestCatalog.entry.specialInstructions"/>
+			<short value="special instruction"/>
+			<definition value="special instruction."/>
+			<comments value="example: &quot;Please include tentative diagnosis/treatment&quot;."/>
+			<requirements value="[0..*], textual."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-54"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimenRequired">
+			<path value="LabTestCatalog.entry.specimenRequired"/>
+			<short value="specimen(s)expected"/>
+			<definition value="specimen(s)expected."/>
+			<comments value="reference(SpecimenDefinition)."/>
+			<requirements value="[1..*]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="boolean"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM4"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="OM4 repeatable"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.turnaroundtime">
+			<path value="LabTestCatalog.entry.turnaroundtime"/>
+			<short value="expected turn-around time"/>
+			<definition value="expected turn-around time."/>
+			<comments value="the typical processing time for single test/observation."/>
+			<requirements value="[0..1]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Quantity"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-57"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.gender">
+			<path value="LabTestCatalog.entry.gender"/>
+			<short value="gender restriction"/>
+			<definition value="gender restriction."/>
+			<comments value="this service can only be ordered for this gender."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<binding>
+				<strength value="required"></strength>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/administrative-gender"></valueSetUri>
+			</binding>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-58"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.age">
+			<path value="LabTestCatalog.entry.age"/>
+			<short value="age restriction"/>
+			<definition value="age restriction."/>
+			<comments value="this service can only be ordered for these age ranges."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Range"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-59"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.updateDate">
+			<path value="LabTestCatalog.entry.updateDate"/>
+			<short value="date/time for any change"/>
+			<definition value="date/time for any change."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="date"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.effectiveDate">
+			<path value="LabTestCatalog.entry.effectiveDate"/>
+			<short value="effective date/time of change"/>
+			<definition value="effective date/time of change."/>
+			<comments value="change that breaks compatibility with previous results."/>
+			<requirements value="[0..1]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="date"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.atomic">
+			<path value="LabTestCatalog.entry.atomic"/>
+			<comments value="EH; DO We need this  I think these are not a subclass."/>
+			<alias value="atomic reportable observation"/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="BackboneElement"/>
+			</type>
+			<mapping>
+				<identity value="v2"/>
+				<map value="right"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.component">
+			<path value="LabTestCatalog.entry.component"/>
+			<short value="Test/Observations Included within an Ordered Test Battery"/>
+			<definition value="Test/Observations Included within an Ordered Test Battery."/>
+			<requirements value="LOINC (withexceptions)."/>
+			<min value="0"/>
+			<max value="*"/>
+<contentReference value="#LabTestCatalog.entry"></contentReference>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM5-2"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM5-2:
+R"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.displayName">
+			<path value="LabTestCatalog.entry.displayName"/>
+			<short value="preferred report name"/>
+			<definition value="preferred report name."/>
+			<comments value=".alias maps to OM1-51."/>
+			<requirements value="up to 30 char."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="DataElement"/>
+			</type>
+			<type>
+				<code value="DiagnosticRequest"/>
+			</type>
+			<type>
+				<code value="DiagnosticReport"/>
+			</type>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="ineDOS only one of these is required"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-9"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.mnemonic">
+			<path value="LabTestCatalog.entry.mnemonic"/>
+			<short value="preferred mnemonic"/>
+			<definition value="preferred mnemonic."/>
+			<comments value="EH: is this needed?"/>
+			<requirements value="up to 8 char."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="DataElement"/>
+			</type>
+			<type>
+				<code value="DiagnosticRequest"/>
+			</type>
+			<type>
+				<code value="DiagnosticReport"/>
+			</type>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="ineDOS only one of these is required"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-10"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.longname">
+			<path value="LabTestCatalog.entry.longname"/>
+			<short value="preferred long name"/>
+			<definition value="preferred long name."/>
+			<comments value="EH:is this needed?"/>
+			<requirements value="up to 200 char."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="DataElement"/>
+			</type>
+			<type>
+				<code value="DiagnosticRequest"/>
+			</type>
+			<type>
+				<code value="DiagnosticReport"/>
+			</type>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="ineDOS only one of these is required"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-11"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.method">
+			<path value="LabTestCatalog.entry.method"/>
+			<short value="method used to produce observation"/>
+			<definition value="method used to produce observation."/>
+			<requirements value="[0..1], coded."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.subheading">
+			<path value="LabTestCatalog.entry.subheading"/>
+			<short value="report subheader"/>
+			<definition value="report subheader."/>
+			<requirements value="[0..1], coded."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="DiagnosticReport"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-19"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.displayOrder">
+			<path value="LabTestCatalog.entry.displayOrder"/>
+			<short value="report display order"/>
+			<definition value="report display order."/>
+			<requirements value="[0..1], string up to 20 char."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="DiagnosticReport"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-20"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.datatypes">
+			<path value="LabTestCatalog.entry.datatypes"/>
+			<short value="permitted data types"/>
+			<definition value="permitted data types."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-3, OM3-7"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-3, OM3-7"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.AnswerList">
+			<path value="LabTestCatalog.entry.AnswerList"/>
+			<short value="value set for valid coded answers"/>
+			<definition value="value set for valid coded answers."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM3-3"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM3-3"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.Normals">
+			<path value="LabTestCatalog.entry.Normals"/>
+			<short value="value set for normal answers"/>
+			<definition value="value set for normal answers."/>
+			<comments value="Need an attribute in ValueSet resource to qualify the value set (normal, abnormal, or critical answers). 
+Could we use ValueSet.useContext for this purpose?"/>
+			<requirements value="Normal Text/Codes for Categorical Observations."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM3-4"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM3-4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.Abnormals">
+			<path value="LabTestCatalog.entry.Abnormals"/>
+			<short value="value set for abnormal answers"/>
+			<definition value="value set for abnormal answers."/>
+			<requirements value="Abnormal Text/Codes for Categorical Observations."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM3-5"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM3-5"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.Critical">
+			<path value="LabTestCatalog.entry.Critical"/>
+			<short value="value set for critical answers"/>
+			<definition value="value set for critical answers."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM3-6"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not used"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.valueType">
+			<path value="LabTestCatalog.entry.valueType"/>
+			<short value="Value Type"/>
+			<definition value="Value Type."/>
+			<requirements value="Value Type."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not used"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM3-7"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.units">
+			<path value="LabTestCatalog.entry.units"/>
+			<short value="customary units of measure"/>
+			<definition value="customary units of measure."/>
+			<requirements value="[0..1], UCUM."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM2-2"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-2"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.untisSI">
+			<path value="LabTestCatalog.entry.untisSI"/>
+			<short value="corresponding SI units of measure"/>
+			<definition value="corresponding SI units of measure."/>
+			<requirements value="[0..1], UCUM."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.conversion">
+			<path value="LabTestCatalog.entry.conversion"/>
+			<short value="conversion factor customary -&gt; SI"/>
+			<definition value="conversion factor customary -&gt; SI."/>
+			<requirements value="[0..1], textual."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-5"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.precision">
+			<path value="LabTestCatalog.entry.precision"/>
+			<short value="decimal precision"/>
+			<definition value="decimal precision."/>
+			<comments value="as part of decimal type."/>
+			<requirements value="[0..1]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM2-3"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-3"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.referenceRange">
+			<path value="LabTestCatalog.entry.referenceRange"/>
+			<short value="reference (normal) range / criteria"/>
+			<definition value="reference (normal) range / criteria."/>
+			<comments value="criteria include sex, age, gestational age, species, raceeH; Use ReferenceRangeelement from Observation."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM2-6"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-6"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.criticalReferenceRange">
+			<path value="LabTestCatalog.entry.criticalReferenceRange"/>
+			<short value="critical range / criteria"/>
+			<definition value="critical range / criteria."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-7"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.absoluteReferenceRange">
+			<path value="LabTestCatalog.entry.absoluteReferenceRange"/>
+			<short value="absolute range"/>
+			<definition value="absolute range."/>
+			<requirements value="[0..1]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM2-8"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.interference">
+			<path value="LabTestCatalog.entry.interference"/>
+			<short value="factors that may affect observation"/>
+			<definition value="factors that may affect observation."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Observation"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-39"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.reflex">
+			<path value="LabTestCatalog.entry.reflex"/>
+			<short value="potential reflex tests"/>
+			<definition value="potential reflex tests."/>
+			<comments value="reference(DataElement)."/>
+			<requirements value="[0..*], LOINC withexceptions."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-34"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.reflexRules">
+			<path value="LabTestCatalog.entry.reflexRules"/>
+			<short value="rules triggering reflex tests"/>
+			<definition value="rules triggering reflex tests."/>
+			<requirements value="[0..*], textual."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-35"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation">
+			<path value="LabTestCatalog.entry.supportingInformation"/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Element"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-31"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="v2"/>
+				<map value="right"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.code">
+			<path value="LabTestCatalog.entry.supportingInformation.code"/>
+			<short value="clinical information identifier"/>
+			<definition value="clinical information identifier."/>
+			<comments value="see Questionnaire."/>
+			<requirements value="EH; AOEs  LOINC (withexceptions)."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-31"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.whenAsk">
+			<path value="LabTestCatalog.entry.supportingInformation.whenAsk"/>
+			<short value="asked at orderentry or at specimen collection time?"/>
+			<definition value="asked at orderentry or at specimen collection time?"/>
+			<comments value="Should we use .element.requirements for this purpose? Or .element.constraint?eH; NO."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-5"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.required">
+			<path value="LabTestCatalog.entry.supportingInformation.required"/>
+			<short value="answer required or not"/>
+			<definition value="answer required or not."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<requirements value="boolean."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-7"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.hint">
+			<path value="LabTestCatalog.entry.supportingInformation.hint"/>
+			<short value="hint/help text"/>
+			<definition value="hint/help text."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-8"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.answerType">
+			<path value="LabTestCatalog.entry.supportingInformation.answerType"/>
+			<short value="type of answer"/>
+			<definition value="type of answer."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-9"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.multiples">
+			<path value="LabTestCatalog.entry.supportingInformation.multiples"/>
+			<short value="multiple answers allowed"/>
+			<definition value="multiple answers allowed."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-10"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.answerList">
+			<path value="LabTestCatalog.entry.supportingInformation.answerList"/>
+			<short value="value set for coded answers"/>
+			<definition value="value set for coded answers."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-11"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.length">
+			<path value="LabTestCatalog.entry.supportingInformation.length"/>
+			<short value="maximum length"/>
+			<definition value="maximum length."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-12"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.supportingInformation.precision">
+			<path value="LabTestCatalog.entry.supportingInformation.precision"/>
+			<short value="decimal precision for numeric"/>
+			<definition value="decimal precision for numeric."/>
+			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Questionnaire"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-13"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen">
+			<path value="LabTestCatalog.entry.specimen"/>
+			<comments value="The resource Specimen does not fit (actual specimen collected from an actual subject)."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Element"/>
+			</type>
+			<mapping>
+				<identity value="v2"/>
+				<map value="right"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.type">
+			<path value="LabTestCatalog.entry.specimen.type"/>
+			<short value="specimen type"/>
+			<definition value="specimen type."/>
+			<requirements value="SNOMED CT and/or HL70487."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM4-6"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="serum, plasma, urine, blood, CSF, …"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-6"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.container">
+			<path value="LabTestCatalog.entry.specimen.container"/>
+			<short value="container"/>
+			<definition value="container."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Element"/>
+			</type>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="LCSD supports only 1 container/specimen"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.container.type">
+			<path value="LabTestCatalog.entry.specimen.container.type"/>
+			<short value="container description"/>
+			<definition value="container description."/>
+			<requirements value="textual."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM4-3"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-3"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.container.volume">
+			<path value="LabTestCatalog.entry.specimen.container.volume"/>
+			<short value="container volume"/>
+			<definition value="container volume."/>
+			<requirements value="numeric."/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM4-4"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.container.preferrence">
+			<path value="LabTestCatalog.entry.specimen.container.preferrence"/>
+			<short value="preferred a types of containers"/>
+			<definition value="preferred a types of containers."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="eDOS: additional OM4 segment"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="+ OM4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.additve">
+			<path value="LabTestCatalog.entry.specimen.additve"/>
+			<short value="specimen additive"/>
+			<definition value="specimen additive."/>
+			<requirements value="coded: HL70371."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-7"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.collectionVolume">
+			<path value="LabTestCatalog.entry.specimen.collectionVolume"/>
+			<short value="normal collection volume"/>
+			<definition value="normal collection volume."/>
+			<requirements value="includes units."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM4-10"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="datatype CQ includes units"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-10"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.minimumCollectionVolume">
+			<path value="LabTestCatalog.entry.specimen.minimumCollectionVolume"/>
+			<short value="minimal collection volume"/>
+			<definition value="minimal collection volume."/>
+			<requirements value="includes units."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM4-11"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="datatype CQ includes units"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-11"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.requirements">
+			<path value="LabTestCatalog.entry.specimen.requirements"/>
+			<short value="specimen requirement"/>
+			<definition value="specimen requirement."/>
+			<requirements value="text (collection, shipping, …)."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-12"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.handling">
+			<path value="LabTestCatalog.entry.specimen.handling"/>
+			<short value="specimen handling code"/>
+			<definition value="specimen handling code."/>
+			<requirements value="coded: HL70376."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-15"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.specimen.preference">
+			<path value="LabTestCatalog.entry.specimen.preference"/>
+			<short value="specimen preferred or alternate"/>
+			<definition value="specimen preferred or alternate."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Specimen"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-16, -17"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.chargeCharacteristic">
+			<path value="LabTestCatalog.entry.chargeCharacteristic"/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Element"/>
+			</type>
+			<mapping>
+				<identity value="v2"/>
+				<map value="left"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.chargeCharacteristic.shortName">
+			<path value="LabTestCatalog.entry.chargeCharacteristic.shortName"/>
+			<short value="charge description, short"/>
+			<definition value="charge description, short."/>
+			<comments value="part of codeableConcept."/>
+			<requirements value="[1..1], string up to 20 char."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="CDM-3"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.chargeCharacteristic.longName">
+			<path value="LabTestCatalog.entry.chargeCharacteristic.longName"/>
+			<short value="charge description, long"/>
+			<definition value="charge description, long."/>
+			<comments value="part of codeableConcept."/>
+			<requirements value="[0..1], string up to 250 char."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not supported"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.chargeCharacteristic.code">
+			<path value="LabTestCatalog.entry.chargeCharacteristic.code"/>
+			<short value="procedure code(s)"/>
+			<definition value="procedure code(s)."/>
+			<requirements value="[1..*], CNE - HL70088_USL."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="locallyextended"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="Frenchextension uses similar codes"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="CDM-7"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.chargeCharacteristic.price">
+			<path value="LabTestCatalog.entry.chargeCharacteristic.price"/>
+			<short value="price"/>
+			<definition value="price."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Money"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="locallyextended"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="Frenchextension"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="PRC-5"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy">
+			<path value="LabTestCatalog.entry.payerPolicy"/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Element"/>
+			</type>
+			<mapping>
+				<identity value="v2"/>
+				<map value="left"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.healthPlan">
+			<path value="LabTestCatalog.entry.payerPolicy.healthPlan"/>
+			<short value="health plan ID"/>
+			<definition value="health plan ID."/>
+			<comments value="Reference(Organization)."/>
+			<requirements value="[1..1]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Identifier"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="PM1-1"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.InsCompany">
+			<path value="LabTestCatalog.entry.payerPolicy.InsCompany"/>
+			<short value="insurance company ID"/>
+			<definition value="insurance company ID."/>
+			<comments value="Reference(Organization)."/>
+			<requirements value="[1..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Reference"/>
+				<profile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="PM1-2"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.priceRange">
+			<path value="LabTestCatalog.entry.payerPolicy.priceRange"/>
+			<short value="universal service price range"/>
+			<definition value="universal service price range."/>
+			<requirements value="[0..1]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Range"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="MCP-3, MCP-4"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.reason">
+			<path value="LabTestCatalog.entry.payerPolicy.reason"/>
+			<short value="reason for variation of price"/>
+			<definition value="reason for variation of price."/>
+			<requirements value="[0..1]."/>
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="string"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="MCP-5"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures">
+			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures"/>
+			<short value="procedures approved per diagnosis"/>
+			<definition value="procedures approved per diagnosis."/>
+			<requirements value="[0..*]."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="Element"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="DPS"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode">
+			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode"/>
+			<short value="diagnosis code"/>
+			<definition value="diagnosis code."/>
+			<requirements value="[1..1], coded."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="DPS-1"/>
+			</mapping>
+		</element>
+		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode">
+			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode"/>
+			<short value="procedure code"/>
+			<definition value="procedure code."/>
+			<requirements value="[1..*], CNE - HL70088_USL."/>
+			<min value="0"/>
+			<max value="*"/>
+			<type>
+				<code value="CodeableConcept"/>
+			</type>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="edos"/>
+				<map value="DPS-2"/>
+			</mapping>
+		</element>
+	</differential>
+</StructureDefinition>
