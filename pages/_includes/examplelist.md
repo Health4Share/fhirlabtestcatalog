@@ -1,1 +1,2 @@
-- [LRI Example](http://healthedatainc.com/go-ftp/publish/diagnosticreport-lri-example.html)
+- [NIST EDOS Examples](http://hit-dev.nist.gov:8087/edos-r2/#/home)
+- [IHE LSCD Examples](#)
