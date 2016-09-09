@@ -35,11 +35,7 @@
 		<uri value="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=151"/>
 		<name value="Mapping to EDOS R2"/>
 	</mapping>
-	<mapping>
-		<identity value="v2"/>
-		<uri value="http://hl7.org/v2"/>
-		<name value="HL7 v2 Mapping"/>
-	</mapping>
+
 	<kind value="logical"/>
 	<abstract value="false"/>
 	<type value="LabTestCatalog"/>
@@ -528,7 +524,7 @@
 				<map value="OM1-32"/>
 			</mapping>
 		</element>
-				<element id="LabTestCatalog.entry.interference">
+		<element id="LabTestCatalog.entry.interference">
 			<path value="LabTestCatalog.entry.interference"/>
 			<short value="factors that may affect observation"/>
 			<definition value="description of the foods, diagnoses, drugs, or other conditions that may influence the interpretation of the observation. Information about the direction of the effect, and any recommendation about altering the diet, conditions, or drug before initiating the test observation."/>
@@ -1181,7 +1177,6 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<map value="OM2-8"/>
 			</mapping>
 		</element>
-
 		<element id="LabTestCatalog.entry.measurement.performingLab">
 			<path value="LabTestCatalog.entry.measurement.performingLab"/>
 			<short value="producer identifier"/>
@@ -1208,6 +1203,9 @@ Could we use ValueSet.useContext for this purpose?"/>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation">
 			<path value="LabTestCatalog.entry.supportingInformation"/>
+			<short value="AOEs"/>
+			<definition value="the list of variables that the diagnostic service needs to interpret the results of an ordered study  For example  - age, sex."/>
+			<comments value="service producer is distinct from DataElement.publisher."/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="*"/>
@@ -1228,19 +1226,19 @@ Could we use ValueSet.useContext for this purpose?"/>
 			</mapping>
 			<mapping>
 				<identity value="edos"/>
-				<map value="OMC"/>
+				<map value="OMC segment"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.code">
 			<path value="LabTestCatalog.entry.supportingInformation.code"/>
 			<short value="clinical information identifier"/>
-			<definition value="clinical information identifier."/>
+			<definition value=" code that the define the data elements the diagnostic service needs to interpret the results of an ordered study."/>
 			<comments value="see Questionnaire."/>
 			<requirements value="EH; AOEs  LOINC (withexceptions)."/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="CodeableConcept"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1258,12 +1256,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.whenAsk">
 			<path value="LabTestCatalog.entry.supportingInformation.whenAsk"/>
 			<short value="asked at orderentry or at specimen collection time?"/>
-			<definition value="asked at orderentry or at specimen collection time?"/>
+			<definition value="When in the ordering process or workflow this information must be collected."/>
 			<comments value="Should we use .element.requirements for this purpose? Or .element.constraint?eH; NO."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="code"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1281,13 +1279,13 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.required">
 			<path value="LabTestCatalog.entry.supportingInformation.required"/>
 			<short value="answer required or not"/>
-			<definition value="answer required or not."/>
+			<definition value="Must the question be answered,"/>
 			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
 			<requirements value="boolean."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="boolean"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1305,12 +1303,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.hint">
 			<path value="LabTestCatalog.entry.supportingInformation.hint"/>
 			<short value="hint/help text"/>
-			<definition value="hint/help text."/>
+			<definition value="Guidance to the provider on how to answer the question."/>
 			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="string"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1328,13 +1326,17 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.answerType">
 			<path value="LabTestCatalog.entry.supportingInformation.answerType"/>
 			<short value="type of answer"/>
-			<definition value="type of answer."/>
-			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
+			<definition value="This field contains the allowed datatype for answers, Type of answers include: numeric, date, coded, text, etc"/>
+			<comments value="EH: property of reference resource Questionnaire"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="CodeableConcept"/>
 			</type>
+			<binding>
+				<strength value="example"/>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/data-types"/>
+			</binding>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
@@ -1351,12 +1353,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.multiples">
 			<path value="LabTestCatalog.entry.supportingInformation.multiples"/>
 			<short value="multiple answers allowed"/>
-			<definition value="multiple answers allowed."/>
+			<definition value="Indicates if multiple answers are allowed, ."/>
 			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="boolean"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1374,13 +1376,15 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.answerList">
 			<path value="LabTestCatalog.entry.supportingInformation.answerList"/>
 			<short value="value set for coded answers"/>
-			<definition value="value set for coded answers."/>
+			<definition value="Allowed coded answers to be sent and/or display Text for Ordering system to present to provider."/>
 			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="Reference"/>
+				<profile value="ValueSet"></profile>
 			</type>
+			
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
@@ -1397,12 +1401,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.length">
 			<path value="LabTestCatalog.entry.supportingInformation.length"/>
 			<short value="maximum length"/>
-			<definition value="maximum length."/>
+			<definition value="Total number of characters allowed. Required for numeric and (long) text answers."/>
 			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="integer"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1420,12 +1424,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.supportingInformation.precision">
 			<path value="LabTestCatalog.entry.supportingInformation.precision"/>
 			<short value="decimal precision for numeric"/>
-			<definition value="decimal precision for numeric."/>
+			<definition value="For numeric answers the number of digits after the decimal."/>
 			<comments value="EH: property of reference resource e.g. DataElement or Questionnaire or Observation."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Questionnaire"/>
+				<code value="integer"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1464,11 +1468,14 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<map value="OM4"/>
 			</mapping>
 		</element>
-		<element id="LabTestCatalog.entry.specimen.code">
-			<path value="LabTestCatalog.entry.specimen.code"/>
-			<definition value="This specimen can be a coded concept or a reference to the Specimen Resource. This element may repeat when an observation or battery requires multiple specimens for their performance (e.g., creatinine clearance requires a 24-hour urine specimen and a serum specimen)."/>
-			<min value="0"/>
-			<max value="*"/>
+
+		<element id="LabTestCatalog.entry.specimen.type">
+			<path value="LabTestCatalog.entry.specimen.type"/>
+			<short value="specimen type"/>
+			<definition value="This specimen can be a coded concept or a reference to the Specimen Resource. This element may repeat when an observation or battery requires multiple specimens for their performance (e.g., creatinine clearance requires a 24-hour urine specimen and a serum specimen)"/>
+			<requirements value="SNOMED CT and/or HL70487."/>
+			<min value="1"/>
+			<max value="1"/>
 			<type>
 				<code value="CodeableConcept"/>
 			</type>
@@ -1476,21 +1483,6 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<strength value="extensible"/>
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/uslab-spec-type"/>
 			</binding>
-			<mapping>
-				<identity value="v2"/>
-				<map value="right"/>
-			</mapping>
-		</element>
-		<element id="LabTestCatalog.entry.specimen.type">
-			<path value="LabTestCatalog.entry.specimen.type"/>
-			<short value="specimen type"/>
-			<definition value="specimen type."/>
-			<requirements value="SNOMED CT and/or HL70487."/>
-			<min value="1"/>
-			<max value="1"/>
-			<type>
-				<code value="Specimen"/>
-			</type>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM4-6"/>
@@ -1527,7 +1519,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="1"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="string"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1546,7 +1538,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="1"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="decimal"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1565,7 +1557,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="CodeableConcept"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1588,7 +1580,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="CodeableConcept"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1607,7 +1599,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="Quantity"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1630,7 +1622,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="Quantity"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1653,7 +1645,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="string"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1672,7 +1664,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="code"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1690,7 +1682,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Specimen"/>
+				<code value="integer"/>
 			</type>
 			<mapping>
 				<identity value="lcsd"/>
