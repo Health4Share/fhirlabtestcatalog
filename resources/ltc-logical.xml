@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://hl7.org/fhir">
+<StructureDefinition xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir //ERICS-AIR/ehaas/Documents/FHIR/build/schema/structuredefinition.xsd" xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id value="labtestcatalog"/>
 	<url value="http://hl7.org/fhir/us/lab/StructureDefinition/labtestcatalog"/>
 	<name value="LabTestCatalog"/>
@@ -31,6 +31,11 @@
 		<uri value="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=151"/>
 		<name value="Mapping to EDOS R2"/>
 	</mapping>
+		<mapping>
+		<identity value="fhir-mapping"/>
+		<uri value="http://hl7.org/fhir/us/lab/labtestcatalog"/>
+		<name value="Logical Model to FHIR Structure mappings"/>
+	</mapping>
 	<kind value="logical"/>
 	<abstract value="false"/>
 	<type value="LabTestCatalog"/>
@@ -44,6 +49,10 @@
 			<comments value="This level could be represented by a resource referencing all the DataElements describing lab IVD testing services?   Or the catalog could be represented only by the common root to the urls of the testing services resources?"/>
 			<min value="0"/>
 			<max value="1"/>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.publisher">
 			<path value="LabTestCatalog.publisher"/>
@@ -61,6 +70,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="MSH-4"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.identifier">
@@ -84,6 +97,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="LCSD overloads MFI-2 to add this item"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.language">
@@ -112,6 +129,10 @@
 				<identity value="mapcomments"/>
 				<map value="LCSD overloads MFI-2 to add this item"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.version">
 			<path value="LabTestCatalog.version"/>
@@ -135,6 +156,10 @@
 				<identity value="mapcomments"/>
 				<map value="LCSD overloads MFI-2 to add this item"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.updateDate">
 			<path value="LabTestCatalog.updateDate"/>
@@ -153,6 +178,10 @@
 				<identity value="lcsd"/>
 				<map value="MFI-4"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry">
 			<path value="LabTestCatalog.entry"/>
@@ -164,6 +193,10 @@
 			<type>
 				<code value="BackboneElement"/>
 			</type>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Bundle"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.sequence">
 			<path value="LabTestCatalog.entry.sequence"/>
@@ -183,6 +216,10 @@
 				<identity value="mapcomments"/>
 				<map value="sequence number"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.updateDate">
 			<path value="LabTestCatalog.entry.updateDate"/>
@@ -200,6 +237,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.effectiveDate">
@@ -220,6 +261,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.code">
@@ -249,6 +294,10 @@
 				<identity value="mapcomments"/>
 				<map value="coded withexceptions"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.name">
 			<path value="LabTestCatalog.entry.name"/>
@@ -272,6 +321,10 @@
 				<identity value="mapcomments"/>
 				<map value="coded withexceptions"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.mnemonic">
 			<path value="LabTestCatalog.entry.mnemonic"/>
@@ -292,6 +345,10 @@
 				<identity value="mapcomments"/>
 				<map value="ineDOS only one of these is required EH: map to DE, DR, DO, OBS"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.longname">
 			<path value="LabTestCatalog.entry.longname"/>
@@ -311,6 +368,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="ineDOS only one of these is required, EH: map to DE, DR, DO, OBS"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.otherName">
@@ -335,6 +396,10 @@
 				<identity value="mapcomments"/>
 				<map value="not used by edos(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.orderable">
 			<path value="LabTestCatalog.entry.orderable"/>
@@ -349,6 +414,10 @@
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-12:Orderability"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.type">
@@ -378,6 +447,10 @@
 				<identity value="mapcomments"/>
 				<map value="required"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.description">
 			<path value="LabTestCatalog.entry.description"/>
@@ -396,6 +469,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-6"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.schedule">
@@ -417,6 +494,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.OrderAlone">
 			<path value="LabTestCatalog.entry.OrderAlone"/>
@@ -435,6 +516,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.category">
@@ -460,6 +545,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.patientPrep">
 			<path value="LabTestCatalog.entry.patientPrep"/>
@@ -480,6 +569,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.interpretation">
 			<path value="LabTestCatalog.entry.interpretation"/>
@@ -499,6 +592,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.interference">
 			<path value="LabTestCatalog.entry.interference"/>
@@ -516,6 +613,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.contraindications">
@@ -540,6 +641,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.priorResults">
 			<path value="LabTestCatalog.entry.priorResults"/>
@@ -563,6 +668,10 @@
 				<identity value="mapcomments"/>
 				<map value="Should this be a reference to DR?"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specialInstructions">
 			<path value="LabTestCatalog.entry.specialInstructions"/>
@@ -582,6 +691,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.subject">
 			<path value="LabTestCatalog.entry.subject"/>
@@ -595,6 +708,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value=" EH Patient Profile Components"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Patient"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.subject.gender">
@@ -623,6 +740,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a Patient Profile"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Patient"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.subject.age">
 			<path value="LabTestCatalog.entry.subject.age"/>
@@ -645,6 +766,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a Patient Profile"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Patient"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.turnaroundtime">
@@ -669,6 +794,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.component">
 			<path value="LabTestCatalog.entry.component"/>
@@ -689,6 +818,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a DiagnosticeReport Profile"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.reflex">
@@ -714,6 +847,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.reflexRules">
 			<path value="LabTestCatalog.entry.reflexRules"/>
@@ -733,6 +870,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="ActivityDefinition"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report">
 			<path value="LabTestCatalog.entry.report"/>
@@ -746,6 +887,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value=" EH DR Profile Components"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="DiagnosticReport"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.displayName">
@@ -767,6 +912,10 @@
 				<identity value="mapcomments"/>
 				<map value="ineDOS only one of these is required EH: map to  DR"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="DiagnosticReport"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.subheading">
 			<path value="LabTestCatalog.entry.report.subheading"/>
@@ -785,6 +934,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-19"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="DiagnosticReport"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.displayOrder">
@@ -805,6 +958,10 @@
 				<identity value="lcsd"/>
 				<map value="OM1-20"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="DiagnosticReport"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement">
 			<path value="LabTestCatalog.entry.measurement"/>
@@ -819,6 +976,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value=" EH Observation Profile Components"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.method">
@@ -847,6 +1008,10 @@
 				<identity value="mapcomments"/>
 				<map value="OM1-14  EH: map to OBS"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.datatypes">
 			<path value="LabTestCatalog.entry.measurement.datatypes"/>
@@ -865,6 +1030,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-3, OM3-7"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.AnswerList">
@@ -887,6 +1056,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM3-3"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Normals">
@@ -912,6 +1085,10 @@
 				<identity value="lcsd"/>
 				<map value="OM3-4"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Abnormals">
 			<path value="LabTestCatalog.entry.measurement.Abnormals"/>
@@ -935,6 +1112,10 @@
 				<identity value="lcsd"/>
 				<map value="OM3-5"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Critical">
 			<path value="LabTestCatalog.entry.measurement.Critical"/>
@@ -956,6 +1137,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM3-6"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.valueType">
@@ -980,6 +1165,10 @@
 				<identity value="lcsd"/>
 				<map value="not used"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.units">
 			<path value="LabTestCatalog.entry.measurement.units"/>
@@ -998,6 +1187,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM2-2"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.UCUM">
@@ -1026,6 +1219,10 @@
 				<identity value="mapcomments"/>
 				<map value="OM2-4  EH: map to OBS"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.conversion">
 			<path value="LabTestCatalog.entry.measurement.conversion"/>
@@ -1049,6 +1246,10 @@
 				<identity value="mapcomments"/>
 				<map value="OM2-5 EH: map to OBS"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.precision">
 			<path value="LabTestCatalog.entry.measurement.precision"/>
@@ -1068,6 +1269,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM2-3"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.referenceRange">
@@ -1093,6 +1298,10 @@
 				<identity value="mapcomments"/>
 				<map value="EH: map to Observation.referenceRange"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.criticalReferenceRange">
 			<path value="LabTestCatalog.entry.measurement.criticalReferenceRange"/>
@@ -1116,6 +1325,10 @@
 				<identity value="mapcomments"/>
 				<map value="EH: map to Observation.referenceRange"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.absoluteReferenceRange">
 			<path value="LabTestCatalog.entry.measurement.absoluteReferenceRange"/>
@@ -1138,6 +1351,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="EH: map to Observation.referenceRange"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.performingLab">
@@ -1163,6 +1380,10 @@
 				<identity value="mapcomments"/>
 				<map value="required"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Observation"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation">
 			<path value="LabTestCatalog.entry.supportingInformation"/>
@@ -1186,6 +1407,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.code">
@@ -1211,6 +1436,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.whenAsk">
 			<path value="LabTestCatalog.entry.supportingInformation.whenAsk"/>
@@ -1233,6 +1462,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.required">
@@ -1258,6 +1491,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.hint">
 			<path value="LabTestCatalog.entry.supportingInformation.hint"/>
@@ -1280,6 +1517,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerType">
@@ -1308,6 +1549,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.multiples">
 			<path value="LabTestCatalog.entry.supportingInformation.multiples"/>
@@ -1330,6 +1575,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerList">
@@ -1355,6 +1604,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.length">
 			<path value="LabTestCatalog.entry.supportingInformation.length"/>
@@ -1377,6 +1630,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.precision">
@@ -1401,6 +1658,10 @@
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Questionnaire"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen">
 			<path value="LabTestCatalog.entry.specimen"/>
@@ -1424,6 +1685,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="OM4 repeatable"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.type">
@@ -1452,6 +1717,10 @@
 				<identity value="mapcomments"/>
 				<map value="serum, plasma, urine, blood, CSF, …"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container">
 			<path value="LabTestCatalog.entry.specimen.container"/>
@@ -1470,6 +1739,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="LCSD supports only 1 container/specimen"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.type">
@@ -1490,6 +1763,10 @@
 				<identity value="lcsd"/>
 				<map value="OM4-3"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.volume">
 			<path value="LabTestCatalog.entry.specimen.container.volume"/>
@@ -1508,6 +1785,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM4-4"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.preferrence">
@@ -1532,6 +1813,10 @@
 				<identity value="mapcomments"/>
 				<map value="eDOS: additional OM4 segment"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.additve">
 			<path value="LabTestCatalog.entry.specimen.additve"/>
@@ -1554,6 +1839,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.collectionVolume">
@@ -1578,6 +1867,10 @@
 				<identity value="mapcomments"/>
 				<map value="datatype CQ includes units"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.minimumCollectionVolume">
 			<path value="LabTestCatalog.entry.specimen.minimumCollectionVolume"/>
@@ -1601,6 +1894,10 @@
 				<identity value="mapcomments"/>
 				<map value="datatype CQ includes units"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.requirements">
 			<path value="LabTestCatalog.entry.specimen.requirements"/>
@@ -1619,6 +1916,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.handling">
@@ -1643,6 +1944,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.preference">
 			<path value="LabTestCatalog.entry.specimen.preference"/>
@@ -1661,6 +1966,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="Specimen"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic">
 			<path value="LabTestCatalog.entry.chargeCharacteristic"/>
@@ -1673,6 +1982,10 @@
 			<mapping>
 				<identity value="edos"/>
 				<map value="CDM Segment"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.shortName">
@@ -1694,6 +2007,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.longName">
 			<path value="LabTestCatalog.entry.chargeCharacteristic.longName"/>
@@ -1713,6 +2030,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.code">
@@ -1741,6 +2062,10 @@
 				<identity value="mapcomments"/>
 				<map value="Frenchextension uses similar codes"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.price">
 			<path value="LabTestCatalog.entry.chargeCharacteristic.price"/>
@@ -1764,6 +2089,10 @@
 				<identity value="mapcomments"/>
 				<map value="PRC-5  (Frenchextension)"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy">
 			<path value="LabTestCatalog.entry.payerPolicy"/>
@@ -1776,6 +2105,10 @@
 			<mapping>
 				<identity value="edos"/>
 				<map value="PM1 Segment"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.healthPlan">
@@ -1796,6 +2129,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.InsCompany">
@@ -1818,6 +2155,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.priceRange">
 			<path value="LabTestCatalog.entry.payerPolicy.priceRange"/>
@@ -1838,6 +2179,10 @@
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.reason">
 			<path value="LabTestCatalog.entry.payerPolicy.reason"/>
@@ -1856,6 +2201,10 @@
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures">
@@ -1879,6 +2228,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="DPS Segment"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode">
@@ -1907,6 +2260,10 @@
 				<identity value="mapcomments"/>
 				<map value="DPS-1"/>
 			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode">
 			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode"/>
@@ -1933,6 +2290,10 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="DPS-2"/>
+			</mapping>
+			<mapping>
+				<identity value="fhir-mapping"/>
+				<map value="??"/>
 			</mapping>
 		</element>
 	</differential>
