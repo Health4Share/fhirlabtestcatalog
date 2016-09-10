@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file://ERICS-AIR/ehaas/Documents/FHIR/build/publish/structuredefinition.xsd">
+<StructureDefinition xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://hl7.org/fhir">
 	<id value="labtestcatalog"/>
-	<text>
-		<status value="generated"/>
-		<div xmlns="http://www.w3.org/1999/xhtml">to do</div>
-	</text>
 	<url value="http://hl7.org/fhir/us/lab/StructureDefinition/labtestcatalog"/>
 	<name value="LabTestCatalog"/>
 	<display value="Lab Test Catalog"/>
@@ -48,21 +44,6 @@
 			<comments value="This level could be represented by a resource referencing all the DataElements describing lab IVD testing services?   Or the catalog could be represented only by the common root to the urls of the testing services resources?"/>
 			<min value="0"/>
 			<max value="1"/>
-			<!--			
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="item in LCSD"/>
-			</mapping>
-			<mapping>
-				<identity value="mapcomments"/>
-				<map value="comments"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="item ineDOS"/>
-			</mapping>
-			
--->
 		</element>
 		<element id="LabTestCatalog.publisher">
 			<path value="LabTestCatalog.publisher"/>
@@ -74,12 +55,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="MSH-4"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="MSH-4 Sending Facility eH : not always the same"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MSH-4"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.identifier">
@@ -93,16 +74,16 @@
 				<code value="Identifier"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-2, MCP-2,:Producer&apos;s Service/Test/Observation"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="MFI-2"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="LCSD overloads MFI-2 to add this item"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-2, MCP-2,:Producer&#39;s Service/Test/Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.language">
@@ -120,16 +101,16 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/languages"/>
 			</binding>
 			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="MFI-2"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="LCSD overloads MFI-2 to add this item"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="not defined"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.version">
@@ -143,16 +124,16 @@
 				<code value="string"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="not defined"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="MFI-2"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="LCSD overloads MFI-2 to add this item"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="not defined"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.updateDate">
@@ -165,12 +146,12 @@
 				<code value="dateTime"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="MFI-4"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="MFI-4"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry">
@@ -183,10 +164,6 @@
 			<type>
 				<code value="BackboneElement"/>
 			</type>
-			<mapping>
-				<identity value="v2"/>
-				<map value="down"/>
-			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.sequence">
 			<path value="LabTestCatalog.entry.sequence"/>
@@ -199,12 +176,12 @@
 				<code value="positiveInt"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="sequence number"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-1 Sequence Number - Test/Observ"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="sequence number"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.updateDate">
@@ -217,12 +194,12 @@
 				<code value="date"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.effectiveDate">
@@ -237,18 +214,18 @@
 				<code value="date"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.code">
 			<path value="LabTestCatalog.entry.code"/>
 			<short value="service identifier (for ordering)"/>
-			<definition value="The producer's usual or preferred identification of the test or observation and all alias codes/identifiers for this observation"/>
+			<definition value="The producer&apos;s usual or preferred identification of the test or observation and all alias codes/identifiers for this observation"/>
 			<comments value="OM1-7 maps to OM1.2 ine dos  and is likely going to be a LOINC codes  see http://healthedatainc.com/go-ftp/publish/dataelement-labtestmaster-example.html."/>
 			<requirements value="LOINC (withexceptions)."/>
 			<min value="1"/>
@@ -261,6 +238,10 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/diagnostic-requests"/>
 			</binding>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-2, OM1-7,MCP-2,:Producer&apos;s Service/Test/Observation"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-2"/>
 			</mapping>
@@ -268,15 +249,11 @@
 				<identity value="mapcomments"/>
 				<map value="coded withexceptions"/>
 			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-2, OM1-7,MCP-2,:Producer&#39;s Service/Test/Observation"/>
-			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.name">
 			<path value="LabTestCatalog.entry.name"/>
 			<short value="service identifier (for ordering)"/>
-			<definition value="The producer's preferred name of the test or observation"/>
+			<definition value="The producer&apos;s preferred name of the test or observation"/>
 			<requirements value="LOINC (withexceptions)."/>
 			<min value="1"/>
 			<max value="1"/>
@@ -284,16 +261,16 @@
 				<code value="string"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-2, OM1-7,MCP-2,:Producer&apos;s Service/Test/Observation"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-2"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="coded withexceptions"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-2, OM1-7,MCP-2,:Producer&#39;s Service/Test/Observation"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.mnemonic">
@@ -308,12 +285,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="ineDOS only one of these is required EH: map to DE, DR, DO, OBS"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-10"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="ineDOS only one of these is required EH: map to DE, DR, DO, OBS"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.longname">
@@ -328,12 +305,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="ineDOS only one of these is required, EH: map to DE, DR, DO, OBS"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-11"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="ineDOS only one of these is required, EH: map to DE, DR, DO, OBS"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.otherName">
@@ -347,16 +324,16 @@
 				<code value="string"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-51"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-8"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="not used by edos(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-51"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.orderable">
@@ -390,16 +367,16 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/v2-0174"/>
 			</binding>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-18"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-18"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="required"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-18"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.description">
@@ -413,12 +390,12 @@
 				<code value="markdown"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="OM1-6"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-6"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.schedule">
@@ -433,18 +410,18 @@
 				<code value="Timing"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-40"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.OrderAlone">
 			<path value="LabTestCatalog.entry.OrderAlone"/>
 			<short value="service exclusive"/>
-			<definition value="This test should be a specific event with no other tests to be performed with this test.If not populated, The default value of 'N' is assumed and  that this test can be included with any number of other tests. When D is specified for this field, using element 'category' to 'determines how tests must be grouped together.  Tests within the same Diagnostic Service Sector may be on the same requisition,"/>
+			<definition value="This test should be a specific event with no other tests to be performed with this test.If not populated, The default value of &apos;N&apos; is assumed and  that this test can be included with any number of other tests. When D is specified for this field, using element &apos;category&apos; to &apos;determines how tests must be grouped together.  Tests within the same Diagnostic Service Sector may be on the same requisition,"/>
 			<requirements value="[0..1], HL70919."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -452,12 +429,12 @@
 				<code value="code"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-48"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.category">
@@ -476,12 +453,12 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/v2-0074"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-49"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.patientPrep">
@@ -496,12 +473,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-37"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.interpretation">
@@ -515,12 +492,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-32"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.interference">
@@ -533,12 +510,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-39"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.contraindications">
@@ -554,15 +531,14 @@
 			</type>
 			<type>
 				<code value="Reference"/>
-				<profile value="Medication"/>
 			</type>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-33"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.priorResults">
@@ -576,16 +552,16 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="Should this be a reference to DR?"/>
+				<identity value="edos"/>
+				<map value="OM1-53"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-53"/>
+				<identity value="mapcomments"/>
+				<map value="Should this be a reference to DR?"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specialInstructions">
@@ -599,12 +575,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-54"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.subject">
@@ -619,10 +595,6 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value=" EH Patient Profile Components"/>
-			</mapping>
-			<mapping>
-				<identity value="v2"/>
-				<map value="right"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.subject.gender">
@@ -640,16 +612,16 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/administrative-gender"/>
 			</binding>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-58"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a Patient Profile"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-58"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.subject.age">
@@ -663,16 +635,16 @@
 				<code value="Range"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-59"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a Patient Profile"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-59"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.turnaroundtime">
@@ -686,16 +658,16 @@
 				<code value="Quantity"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-57"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-57"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.component">
@@ -706,18 +678,17 @@
 			<requirements value="LOINC (withexceptions)."/>
 			<min value="0"/>
 			<max value="*"/>
-			<contentReference value="#LabTestCatalog.entry"/>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a DiagnosticeReport Profile"/>
+				<identity value="edos"/>
+				<map value="OM5-2:R"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM5-2"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="OM5-2:R"/>
+				<identity value="mapcomments"/>
+				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2) EH could be a DiagnosticeReport Profile"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.reflex">
@@ -736,12 +707,12 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/diagnostic-requests"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-34"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.reflexRules">
@@ -755,12 +726,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-35"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report">
@@ -789,18 +760,18 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="ineDOS only one of these is required EH: map to  DR"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-9"/>
+			</mapping>
+			<mapping>
+				<identity value="mapcomments"/>
+				<map value="ineDOS only one of these is required EH: map to  DR"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.subheading">
 			<path value="LabTestCatalog.entry.report.subheading"/>
 			<short value="report subheader"/>
-			<definition value="Defines the preferred header under which this observation should be listed on a standard display. For example, if the test is hemoglobin, this string might be 'Complete blood count.' It is represented as a coded data type so that a battery can be a header. Only the description part of the string may be included in case the subheader does not have an associated code. When a series of observations is displayed according to the sort order given below, the subheader that groups those observations is presented whenever the subheader changes."/>
+			<definition value="Defines the preferred header under which this observation should be listed on a standard display. For example, if the test is hemoglobin, this string might be &apos;Complete blood count.&apos; It is represented as a coded data type so that a battery can be a header. Only the description part of the string may be included in case the subheader does not have an associated code. When a series of observations is displayed according to the sort order given below, the subheader that groups those observations is presented whenever the subheader changes."/>
 			<requirements value="[0..1], coded."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -808,12 +779,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="OM1-19"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-19"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.displayOrder">
@@ -827,12 +798,12 @@
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="OM1-20"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM1-20"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement">
@@ -848,10 +819,6 @@
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value=" EH Observation Profile Components"/>
-			</mapping>
-			<mapping>
-				<identity value="v2"/>
-				<map value="right"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.method">
@@ -869,16 +836,16 @@
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/observation-methods"/>
 			</binding>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="OM1-14  EH: map to OBS"/>
+				<identity value="edos"/>
+				<map value="not defined"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="not defined"/>
+				<identity value="mapcomments"/>
+				<map value="OM1-14  EH: map to OBS"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.datatypes">
@@ -892,11 +859,11 @@
 				<code value="Observation"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM1-3, OM3-7"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM1-3, OM3-7"/>
 			</mapping>
 		</element>
@@ -914,20 +881,19 @@
 				<valueSetUri value="http://hl7.org/fhir/us/daf/ValueSet/daf-observation-value-codes"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM3-3"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM3-3"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Normals">
 			<path value="LabTestCatalog.entry.measurement.Normals"/>
 			<short value="value set for normal answers"/>
-			<definition value="Certain observations/tests have text (alpha) results (e.g., reactive, nonreactive). Alpha normals for those tests should be entered in this field (e.g., 'nonreactive')."/>
-			<comments value="Need an attribute in ValueSet resource to qualify the value set (normal, abnormal, or critical answers). 
-Could we use ValueSet.useContext for this purpose?"/>
+			<definition value="Certain observations/tests have text (alpha) results (e.g., reactive, nonreactive). Alpha normals for those tests should be entered in this field (e.g., &apos;nonreactive&apos;)."/>
+			<comments value="Need an attribute in ValueSet resource to qualify the value set (normal, abnormal, or critical answers).  Could we use ValueSet.useContext for this purpose?"/>
 			<requirements value="Normal Text/Codes for Categorical Observations."/>
 			<min value="0"/>
 			<max value="*"/>
@@ -939,11 +905,11 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/us/daf/ValueSet/daf-observation-value-codes"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM3-4"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM3-4"/>
 			</mapping>
 		</element>
@@ -962,11 +928,11 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/us/daf/ValueSet/daf-observation-value-codes"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM3-5"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM3-5"/>
 			</mapping>
 		</element>
@@ -984,12 +950,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/us/daf/ValueSet/daf-observation-value-codes"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="OM3-6"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not used"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM3-6"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.valueType">
@@ -1007,12 +973,12 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/data-types"/>
 			</binding>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not used"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM3-7"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not used"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.units">
@@ -1026,11 +992,11 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="CodeableConcept"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM2-2"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM2-2"/>
 			</mapping>
 		</element>
@@ -1049,16 +1015,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/us/daf/ValueSet/daf-ucum"/>
 			</binding>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="OM2-4  EH: map to OBS"/>
+				<identity value="edos"/>
+				<map value="not defined"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="not defined"/>
+				<identity value="mapcomments"/>
+				<map value="OM2-4  EH: map to OBS"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.conversion">
@@ -1072,16 +1038,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="OM2-5 EH: map to OBS"/>
+				<identity value="edos"/>
+				<map value="not defined"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="not defined"/>
+				<identity value="mapcomments"/>
+				<map value="OM2-5 EH: map to OBS"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.precision">
@@ -1096,18 +1062,18 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="OM2-3"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="not defined"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="OM2-3"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.referenceRange">
 			<path value="LabTestCatalog.entry.measurement.referenceRange"/>
 			<short value="reference (normal) range / criteria"/>
-			<definition value="the reference (normal) ranges for 'numeric' observations/tests"/>
+			<definition value="the reference (normal) ranges for &apos;numeric&apos; observations/tests"/>
 			<comments value="criteria include sex, age, gestational age, species, raceeH; Use ReferenceRangeelement from Observation."/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
@@ -1116,16 +1082,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="Element"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="EH: map to Observation.referenceRange"/>
+				<identity value="edos"/>
+				<map value="OM2-6"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM2-6"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="OM2-6"/>
+				<identity value="mapcomments"/>
+				<map value="EH: map to Observation.referenceRange"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.criticalReferenceRange">
@@ -1139,23 +1105,22 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="Element"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="EH: map to Observation.referenceRange"/>
+				<identity value="edos"/>
+				<map value="OM2-7"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="OM2-7"/>
+				<identity value="mapcomments"/>
+				<map value="EH: map to Observation.referenceRange"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.absoluteReferenceRange">
 			<path value="LabTestCatalog.entry.measurement.absoluteReferenceRange"/>
 			<short value="absolute range"/>
-			<definition value="Results outside this range are not possible. The field should be recorded in the same format as the normal and critical ranges.
-."/>
+			<definition value="Results outside this range are not possible. The field should be recorded in the same format as the normal and critical ranges. ."/>
 			<requirements value="[0..1]."/>
 			<min value="0"/>
 			<max value="*"/>
@@ -1163,16 +1128,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="Element"/>
 			</type>
 			<mapping>
-				<identity value="mapcomments"/>
-				<map value="EH: map to Observation.referenceRange"/>
+				<identity value="edos"/>
+				<map value="OM2-8"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="OM2-8"/>
+				<identity value="mapcomments"/>
+				<map value="EH: map to Observation.referenceRange"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.performingLab">
@@ -1187,16 +1152,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<profile value="Organization"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM1-5"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-5"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="required"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM1-5"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation">
@@ -1211,20 +1176,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="BackboneElement"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC segment"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-31"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="v2"/>
-				<map value="right"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC segment"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.code">
@@ -1239,16 +1200,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="CodeableConcept"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-4"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM1-31"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-4"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.whenAsk">
@@ -1262,16 +1223,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="code"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-5"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-5"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.required">
@@ -1286,16 +1247,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="boolean"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-7"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-7"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.hint">
@@ -1309,16 +1270,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="string"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-8"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-8"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerType">
@@ -1336,16 +1297,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/data-types"/>
 			</binding>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-9"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-9"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.multiples">
@@ -1359,16 +1320,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="boolean"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-10"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-10"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerList">
@@ -1383,16 +1344,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<profile value="ValueSet"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-11"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-11"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.length">
@@ -1406,16 +1367,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="integer"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-12"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-12"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.precision">
@@ -1429,6 +1390,10 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="integer"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OMC-13"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
@@ -1436,23 +1401,22 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<identity value="mapcomments"/>
 				<map value="(LCSD relies on 2.5.1,eDOS on 2.8.2)"/>
 			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OMC-13"/>
-			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen">
 			<path value="LabTestCatalog.entry.specimen"/>
 			<short value="specimen(s)expected"/>
 			<definition value="Observations/batteries that require a specimen for their performance.  This element can be a coded concept or a reference to the Specimen Resource. This element may repeat when an observation or battery requires multiple specimens for their performance (e.g., creatinine clearance requires a 24-hour urine specimen and a serum specimen)."/>
-						<requirements value="[0..*]."/>
+			<requirements value="[0..*]."/>
 			<alias value="SpecimenRequired"/>
-
 			<min value="0"/>
 			<max value="*"/>
 			<type>
 				<code value="BackboneElement"/>
 			</type>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4"/>
+			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM4"/>
@@ -1460,10 +1424,6 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="OM4 repeatable"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM4"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.type">
@@ -1481,6 +1441,10 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<valueSetUri value="http://hl7.org/fhir/ValueSet/uslab-spec-type"/>
 			</binding>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-6"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM4-6"/>
 			</mapping>
@@ -1488,21 +1452,21 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<identity value="mapcomments"/>
 				<map value="serum, plasma, urine, blood, CSF, …"/>
 			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM4-6"/>
-			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container">
 			<path value="LabTestCatalog.entry.specimen.container"/>
 			<short value="container"/>
-			<definition value="container."/>
+			<definition value="These elemente represent the specimen container elements."/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
 				<code value="BackboneElement"/>
 			</type>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4 "/>
+			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="LCSD supports only 1 container/specimen"/>
@@ -1511,7 +1475,7 @@ Could we use ValueSet.useContext for this purpose?"/>
 		<element id="LabTestCatalog.entry.specimen.container.type">
 			<path value="LabTestCatalog.entry.specimen.container.type"/>
 			<short value="container description"/>
-			<definition value="container description."/>
+			<definition value="the physical appearance, including color of tube tops, shape, and material composition (e.g., red-top glass tube).  Note that the color is not necessarily a unique identifier of the additive and/or use of the tube.  This is especially true for black and some blue tube tops, as can be seen above.  Color is included here for user convenience. "/>
 			<requirements value="textual."/>
 			<min value="1"/>
 			<max value="1"/>
@@ -1519,18 +1483,18 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM4-3"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM4-3"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.volume">
 			<path value="LabTestCatalog.entry.specimen.container.volume"/>
 			<short value="container volume"/>
-			<definition value="container volume."/>
+			<definition value="the capacity of the container. "/>
 			<requirements value="numeric."/>
 			<min value="1"/>
 			<max value="1"/>
@@ -1538,11 +1502,11 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="decimal"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="OM4-4"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="OM4-4"/>
 			</mapping>
 		</element>
@@ -1557,16 +1521,16 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="CodeableConcept"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="0"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="eDOS: additional OM4 segment"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="+ OM4"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.additve">
@@ -1579,19 +1543,23 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<type>
 				<code value="CodeableConcept"/>
 			</type>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/v2-0371"/>
+			</binding>
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM4-7"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.collectionVolume">
 			<path value="LabTestCatalog.entry.specimen.collectionVolume"/>
 			<short value="normal collection volume"/>
-			<definition value="normal collection volume."/>
+			<definition value="the normal specimen volume required by the lab.  This is the amount used by the normal methods and provides enough specimens to repeat the procedure at least once if needed.  The default unit is milliliters (ml)."/>
 			<requirements value="includes units."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -1599,28 +1567,32 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="Quantity"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-10"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM4-10"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
 				<map value="datatype CQ includes units"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM4-10"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.minimumCollectionVolume">
 			<path value="LabTestCatalog.entry.specimen.minimumCollectionVolume"/>
 			<short value="minimal collection volume"/>
-			<definition value="minimal collection volume."/>
+			<definition value="the amount of specimen needed by the most specimen sparing method (e.g., using micro techniques).  The minimum amount allows for only one determination.  The default unit is milliliters (ml)."/>
 			<requirements value="includes units."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
 				<code value="Quantity"/>
 			</type>
+			<mapping>
+				<identity value="edos"/>
+				<map value="OM4-11"/>
+			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="OM4-11"/>
@@ -1629,15 +1601,11 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<identity value="mapcomments"/>
 				<map value="datatype CQ includes units"/>
 			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM4-11"/>
-			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.requirements">
 			<path value="LabTestCatalog.entry.specimen.requirements"/>
 			<short value="specimen requirement"/>
-			<definition value="specimen requirement."/>
+			<definition value="other requirements for specimen delivery and special handling (e.g., delivery within one hour, iced)."/>
 			<requirements value="text (collection, shipping, …)."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -1645,113 +1613,126 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="OM4-12"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.handling">
 			<path value="LabTestCatalog.entry.specimen.handling"/>
 			<short value="specimen handling code"/>
-			<definition value="specimen handling code."/>
+			<definition value="This describes how the specimen and/or container need to be handled from the time of collection through the initiation of testing."/>
 			<requirements value="coded: HL70376."/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
 				<code value="code"/>
 			</type>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/v2-0376"/>
+			</binding>
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM4-15"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.preference">
 			<path value="LabTestCatalog.entry.specimen.preference"/>
 			<short value="specimen preferred or alternate"/>
-			<definition value="specimen preferred or alternate."/>
+			<definition value="Whether the Specimen is the preferred or alternate for collection of the specimen"/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="integer"/>
+				<code value="boolean"/>
 			</type>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM4-16, -17"/>
 			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
+			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic">
 			<path value="LabTestCatalog.entry.chargeCharacteristic"/>
+			<definition value="TheseElements are for identifying anything which is charged to patient accounts, including procedures, services, supplies.  It is intended to be used to maintain a list of valid chargeable utilization items.  Its purpose is to keep billing codes synchronized between HIS, Patient Accounting, and other departmental systems"/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
 				<code value="BackboneElement"/>
 			</type>
 			<mapping>
-				<identity value="v2"/>
-				<map value="left"/>
+				<identity value="edos"/>
+				<map value="CDM Segment"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.shortName">
 			<path value="LabTestCatalog.entry.chargeCharacteristic.shortName"/>
 			<short value="charge description, short"/>
-			<definition value="charge description, short."/>
+			<definition value="text abbreviations or code that is associated with this charge"/>
 			<comments value="part of codeableConcept."/>
 			<requirements value="[1..1], string up to 20 char."/>
-			<min value="0"/>
+			<min value="1"/>
 			<max value="1"/>
 			<type>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="CDM-3"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.longName">
 			<path value="LabTestCatalog.entry.chargeCharacteristic.longName"/>
 			<short value="charge description, long"/>
-			<definition value="charge description, long."/>
+			<definition value="the full text description of this charge"/>
 			<comments value="part of codeableConcept."/>
 			<requirements value="[0..1], string up to 250 char."/>
-			<min value="0"/>
+			<min value="1"/>
 			<max value="1"/>
 			<type>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
+				<identity value="edos"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.code">
 			<path value="LabTestCatalog.entry.chargeCharacteristic.code"/>
 			<short value="procedure code(s)"/>
-			<definition value="procedure code(s)."/>
+			<definition value="The procedure code(s)  for procedure, if any, associated with this charge description. Different procedure coding systems such as CPT4, ASTM, ICD9.  are represented by coding translations."/>
 			<requirements value="[1..*], CNE - HL70088_USL."/>
-			<min value="0"/>
-			<max value="1"/>
+			<min value="1"/>
+			<max value="*"/>
 			<type>
-				<code value="CodeableConcept"/>
+				<code value="Coding"/>
 			</type>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/cpt-all"/>
+			</binding>
+			<mapping>
+				<identity value="edos"/>
+				<map value="CDM-7"/>
+			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="locallyextended"/>
@@ -1760,15 +1741,11 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<identity value="mapcomments"/>
 				<map value="Frenchextension uses similar codes"/>
 			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="CDM-7"/>
-			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.price">
 			<path value="LabTestCatalog.entry.chargeCharacteristic.price"/>
 			<short value="price"/>
-			<definition value="price."/>
+			<definition value="The price to be charged for service, item, or procedure."/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -1776,94 +1753,96 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="Money"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="locallyextended"/>
 			</mapping>
 			<mapping>
 				<identity value="mapcomments"/>
-				<map value="Frenchextension"/>
-			</mapping>
-			<mapping>
-				<identity value="edos"/>
-				<map value="PRC-5"/>
+				<map value="PRC-5  (Frenchextension)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy">
 			<path value="LabTestCatalog.entry.payerPolicy"/>
+			<definition value="These elements contains per insurance company (payer) the policies specific to their organization.  E.g. &apos;Limited Coverage Policy or the Approved Coverage Policy&apos;. "/>
 			<min value="0"/>
 			<max value="*"/>
 			<type>
 				<code value="BackboneElement"/>
 			</type>
 			<mapping>
-				<identity value="v2"/>
-				<map value="left"/>
+				<identity value="edos"/>
+				<map value="PM1 Segment"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.healthPlan">
 			<path value="LabTestCatalog.entry.payerPolicy.healthPlan"/>
 			<short value="health plan ID"/>
-			<definition value="health plan ID."/>
+			<definition value="A unique identifier for the insurance plan."/>
 			<comments value="Reference(Organization)."/>
 			<requirements value="[1..1]."/>
-			<min value="0"/>
+			<min value="1"/>
 			<max value="1"/>
 			<type>
 				<code value="Identifier"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="PM1-1"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.InsCompany">
 			<path value="LabTestCatalog.entry.payerPolicy.InsCompany"/>
 			<short value="insurance company ID"/>
-			<definition value="insurance company ID."/>
+			<definition value="unique identifiers for the insurance company"/>
 			<comments value="Reference(Organization)."/>
 			<requirements value="[1..*]."/>
-			<min value="0"/>
-			<max value="*"/>
+			<min value="1"/>
+			<max value="1"/>
 			<type>
 				<code value="Reference"/>
-				<profile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+				<profile value="Organization"/>
 			</type>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
 			<mapping>
 				<identity value="edos"/>
 				<map value="PM1-2"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.priceRange">
 			<path value="LabTestCatalog.entry.payerPolicy.priceRange"/>
 			<short value="universal service price range"/>
-			<definition value="universal service price range."/>
+			<definition value="Specifies the lowest and highest price for the Universal Service that needs to be disclosed on the payer notification to the patient (for example Medicare ABN)."/>
+			<comments value="This should be a pair of elements with Money datatype.   Check out other FI resources"/>
 			<requirements value="[0..1]."/>
 			<min value="0"/>
 			<max value="1"/>
 			<type>
-				<code value="Range"/>
+				<code value="Money"/>
 			</type>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
 			<mapping>
 				<identity value="edos"/>
 				<map value="MCP-3, MCP-4"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.reason">
 			<path value="LabTestCatalog.entry.payerPolicy.reason"/>
 			<short value="reason for variation of price"/>
-			<definition value="reason for variation of price."/>
+			<definition value="Specifies the reason for the interval between the lowest and the highest price for the Universal Service, for example additional testing (reflex test) that is added based on values of the initial test"/>
 			<requirements value="[0..1]."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -1871,18 +1850,18 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="string"/>
 			</type>
 			<mapping>
-				<identity value="lcsd"/>
-				<map value="not supported"/>
-			</mapping>
-			<mapping>
 				<identity value="edos"/>
 				<map value="MCP-5"/>
+			</mapping>
+			<mapping>
+				<identity value="lcsd"/>
+				<map value="not supported"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures">
 			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures"/>
 			<short value="procedures approved per diagnosis"/>
-			<definition value="procedures approved per diagnosis."/>
+			<definition value="These elements define the Diagnosis and Procedure that impact coverage requirements."/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="*"/>
@@ -1890,49 +1869,69 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<code value="BackboneElement"/>
 			</type>
 			<mapping>
+				<identity value="edos"/>
+				<map value="not supported"/>
+			</mapping>
+			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
-				<map value="DPS"/>
+				<identity value="mapcomments"/>
+				<map value="DPS Segment"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode">
 			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode"/>
 			<short value="diagnosis code"/>
-			<definition value="diagnosis code."/>
+			<definition value="The code assigned to this diagnosis"/>
 			<requirements value="[1..1], coded."/>
-			<min value="0"/>
-			<max value="*"/>
+			<min value="1"/>
+			<max value="1"/>
 			<type>
-				<code value="CodeableConcept"/>
+				<code value="Coding"/>
 			</type>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetUri value="http://hl7.org/fhir/us/daf/ValueSet/daf-problem"/>
+			</binding>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not supported"/>
+			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="mapcomments"/>
 				<map value="DPS-1"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode">
 			<path value="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode"/>
 			<short value="procedure code"/>
-			<definition value="procedure code."/>
+			<definition value="The procedure code for procedure, if any, associated with this charge description. Different procedure coding systems such as CPT4, ASTM, ICD9.  are represented by coding translations."/>
 			<requirements value="[1..*], CNE - HL70088_USL."/>
-			<min value="0"/>
-			<max value="*"/>
+			<min value="1"/>
+			<max value="1"/>
 			<type>
-				<code value="CodeableConcept"/>
+				<code value="Coding"/>
 			</type>
+			<binding>
+				<strength value="extensible"/>
+				<valueSetUri value="http://hl7.org/fhir/ValueSet/cpt-all"/>
+			</binding>
+			<mapping>
+				<identity value="edos"/>
+				<map value="not supported"/>
+			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
 			</mapping>
 			<mapping>
-				<identity value="edos"/>
+				<identity value="mapcomments"/>
 				<map value="DPS-2"/>
 			</mapping>
 		</element>
