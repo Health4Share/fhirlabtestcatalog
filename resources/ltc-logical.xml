@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file://ERICS-AIR/ehaas/Documents/FHIR/build/publish/structuredefinition.xsd">
 	<id value="labtestcatalog"/>
 	<text>
 		<status value="generated"/>
@@ -35,7 +35,6 @@
 		<uri value="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=151"/>
 		<name value="Mapping to EDOS R2"/>
 	</mapping>
-
 	<kind value="logical"/>
 	<abstract value="false"/>
 	<type value="LabTestCatalog"/>
@@ -630,7 +629,6 @@
 			<path value="LabTestCatalog.entry.subject.gender"/>
 			<short value="gender restriction"/>
 			<definition value="Code to indicate that this service can only be ordered for this gender For example a Pap Smear"/>
-			<comments value=""/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="1"/>
@@ -1382,9 +1380,8 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<max value="1"/>
 			<type>
 				<code value="Reference"/>
-				<profile value="ValueSet"></profile>
+				<profile value="ValueSet"/>
 			</type>
-			
 			<mapping>
 				<identity value="lcsd"/>
 				<map value="not supported"/>
@@ -1448,8 +1445,9 @@ Could we use ValueSet.useContext for this purpose?"/>
 			<path value="LabTestCatalog.entry.specimen"/>
 			<short value="specimen(s)expected"/>
 			<definition value="Observations/batteries that require a specimen for their performance.  This element can be a coded concept or a reference to the Specimen Resource. This element may repeat when an observation or battery requires multiple specimens for their performance (e.g., creatinine clearance requires a 24-hour urine specimen and a serum specimen)."/>
+						<requirements value="[0..*]."/>
 			<alias value="SpecimenRequired"/>
-			<requirements value="[0..*]."/>
+
 			<min value="0"/>
 			<max value="*"/>
 			<type>
@@ -1468,7 +1466,6 @@ Could we use ValueSet.useContext for this purpose?"/>
 				<map value="OM4"/>
 			</mapping>
 		</element>
-
 		<element id="LabTestCatalog.entry.specimen.type">
 			<path value="LabTestCatalog.entry.specimen.type"/>
 			<short value="specimen type"/>
