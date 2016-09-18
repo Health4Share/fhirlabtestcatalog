@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StructureDefinition xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir //ERICS-AIR/ehaas/Documents/FHIR/build/schema/structuredefinition.xsd" xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<StructureDefinition xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://hl7.org/fhir">
 	<id value="labtestcatalog"/>
 	<url value="http://hl7.org/fhir/us/lab/StructureDefinition/labtestcatalog"/>
 	<name value="LabTestCatalog"/>
@@ -1020,9 +1020,36 @@
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="*"/>
-			<type>
-				<code value="Observation"/>
-			</type>
+ <type>
+        <code value="Quantity"/>
+      </type>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <type>
+        <code value="string"/>
+      </type>
+      <type>
+        <code value="Range"/>
+      </type>
+      <type>
+        <code value="Ratio"/>
+      </type>
+      <type>
+        <code value="SampledData"/>
+      </type>
+      <type>
+        <code value="Attachment"/>
+      </type>
+      <type>
+        <code value="time"/>
+      </type>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <type>
+        <code value="Period"/>
+      </type>
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-3, OM3-7"/>
