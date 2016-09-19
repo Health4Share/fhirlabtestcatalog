@@ -5,11 +5,13 @@ tcode: {{[type]}}
 ---
 
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!-- instance template base -->
 <head>
-   <meta charset="UTF-8"/>
-  <title>Profile: {{page.title}} - FHIR</title>
-
-  {% include header.html %}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="LabTestCatalog" />
+  <title>LabTestCatalog - FHIR v1.7.0</title
+  
+    {% include header.html %}
 
 </head>
 <body>
@@ -60,9 +62,15 @@ Formal Views of Contents
 </p>
 <!-- EXAMPLE -->
 <p>
-  Example {{paget.titie}} Instances: 
+  Examples {{paget.titie}} Instances of v2 Lab Catalogs: 
   </p>
 {% capture my-include %}{% include examplelist.md %}{% endcapture %} {{ my-include | markdownify }} 
+
+<p>
+  Examples {{paget.titie}} Instances of v2 Lab Catalogs mapped to the Logical Model: 
+  </p>
+{% capture my-include %}{% include examplelist2.md %}{% endcapture %} {{ my-include | markdownify }} 
+
 
 <div id="tabs">
  <ul>
