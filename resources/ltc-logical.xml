@@ -630,9 +630,6 @@
 				<code value="Reference"/>
 				<profile value="Condition"/>
 			</type>
-			<type>
-				<code value="Reference"/>
-			</type>
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM1-33"/>
@@ -803,10 +800,13 @@
 			<path value="LabTestCatalog.entry.component"/>
 			<short value="Test/Observations Included within an Ordered Test Battery"/>
 			<definition value="This element references the entries that  of all tests/observations included within a single battery a single functional procedure or a given superset "/>
-			<comments value="the internal reference is broken in the IG publisher"/>
 			<requirements value="LOINC (withexceptions)."/>
 			<min value="0"/>
 			<max value="*"/>
+						<type>
+				<code value="Coding"/>
+			</type>
+
 			<mapping>
 				<identity value="edos"/>
 				<map value="OM5-2:R"/>
