@@ -959,7 +959,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.report.displayOrder--&gt;DiagnosticReport.extension {|} Rule: .  (EH 9/2016 Comment: This is more like a composition concept instead of DR - discuss)"/>
+				<map value="LabTestCatalog.entry.report.displayOrder--&gt;DiagnosticReport.extension type Integer 0..1 {|} Rule: .  (EH 9/2016 Comment: This is more like a composition concept instead of DR - discuss)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement">
@@ -1189,7 +1189,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.units--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.units--&gt;Observation.valueQuantity.unit {|} Rule: valuetype = valueQuantity et al.  (EH 9/2016 Comment: for other numeric resulted value types as well )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.UCUM">
@@ -1220,7 +1220,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.UCUM--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.UCUM--&gt;Observation.valueQuantity.code {|http://unitsofmeasure.org} Rule: .  (EH 9/2016 Comment: for other numeric resulted value types as well )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.conversion">
@@ -1247,7 +1247,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.conversion--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.conversion--&gt;Observation.extension type string {|} Rule: .  (EH 9/2016 Comment: could also be an operation, for other numeric resulted value types as well )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.precision">
@@ -1271,7 +1271,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.precision--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.precision--&gt;Observation..valueQuantity.value {|} Rule: invarient with regex mask.  (EH 9/2016 Comment: for other numeric resulted value types as well )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.referenceRange">
@@ -1299,7 +1299,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.referenceRange--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.referenceRange--&gt;Observation..referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;normal&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.criticalReferenceRange">
@@ -1326,7 +1326,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.criticalReferenceRange--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.criticalReferenceRange--&gt;Observation..referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;critical&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.absoluteReferenceRange">
@@ -1353,7 +1353,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.absoluteReferenceRange--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.absoluteReferenceRange--&gt;Observation..referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;absolute&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.performingLab">
@@ -1381,7 +1381,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.performingLab--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.performingLab--&gt;Observation..performer.Reference(Organization) {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation">
