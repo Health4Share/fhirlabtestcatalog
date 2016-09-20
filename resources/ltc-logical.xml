@@ -1015,7 +1015,7 @@
 		<element id="LabTestCatalog.entry.measurement.datatypes">
 			<path value="LabTestCatalog.entry.measurement.datatypes"/>
 			<short value="permitted data types"/>
-			<definition value="permitted data types."/>
+			<definition value="The allowed data types for a single categorical observation"/>
 			<requirements value="[0..*]."/>
 			<min value="0"/>
 			<max value="*"/>
@@ -1051,7 +1051,7 @@
 			</type>
 			<mapping>
 				<identity value="edos"/>
-				<map value="OM1-3, OM3-7"/>
+				<map value="OM3-7"/>
 			</mapping>
 			<mapping>
 				<identity value="lcsd"/>
@@ -1166,34 +1166,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.Critical--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
-			</mapping>
-		</element>
-		<element id="LabTestCatalog.entry.measurement.valueType">
-			<path value="LabTestCatalog.entry.measurement.valueType"/>
-			<short value="Value Type"/>
-			<definition value="The allowed data types for a single categorical observation"/>
-			<requirements value="Value Type."/>
-			<min value="0"/>
-			<max value="*"/>
-			<type>
-				<code value="CodeableConcept"/>
-			</type>
-			<binding>
-				<strength value="example"/>
-				<valueSetUri value="http://hl7.org/fhir/ValueSet/data-types"/>
-			</binding>
-			<mapping>
-				<identity value="edos"/>
-				<map value="OM3-7"/>
-			</mapping>
-			<mapping>
-				<identity value="lcsd"/>
-				<map value="not used"/>
-			</mapping>
-			<mapping>
-				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.valueType--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.Critical--&gt;Observation.referenceRange.text {|} Rule: Observation.referenceRange.meaning = &quot;critical&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.units">
@@ -2319,7 +2292,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map/>
+				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 	</differential>
