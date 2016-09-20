@@ -51,7 +51,7 @@
 			<max value="1"/>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog--&gt;Bundle.Root {|} Rule: .type = &quot;collection&quot;.  (EH 9/2016 Comment: Also consider Document for publishing or ActivityDefinition here as well ( could bundle contain link to a pdf?))"/>
+				<map value="LabTestCatalog--&gt;Bundle.root {|} Rule: .type = &quot;collection&quot;.  (EH 9/2016 Comment: Also consider Document for publishing or ActivityDefinition here as well ( could bundle contain link to a pdf?))"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.publisher">
@@ -195,7 +195,7 @@
 			</type>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry--&gt;Bundle..entry …/ActivityDefinition/[entry-id] {|} Rule: .  (EH 9/2016 Comment: or  ActivityDefinition.relatedResources)"/>
+				<map value="LabTestCatalog.entry--&gt;ActivityDefinition.root {|} Rule: .  (EH 9/2016 Comment: or  ActivityDefinition.relatedResources)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.sequence">
@@ -296,7 +296,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.code--&gt;ActivityDefinition..code 1..1 {|} Rule: .  (EH 9/2016 Comment: THIS WILL be shared among the many resulting profiles  ( Obs, DR, DR, QR))"/>
+				<map value="LabTestCatalog.entry.code--&gt;ActivityDefinition|DiagnosticRequest|DiagnosticReport|Observation..code 1..1 {|} Rule: .  (EH 9/2016 Comment: THIS WILL be shared among the many resulting profiles  ( Obs, DR, DR, QR))"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.name">
@@ -323,7 +323,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.name--&gt;ActivityDefinition..title 1..1 {|} Rule: .  (EH 9/2016 Comment: THIS WILL be shared among the many resulting profiles  ( Obs, DR, DR, QR))"/>
+				<map value="LabTestCatalog.entry.name--&gt;ActivityDefinition..title 1..1 {|} Rule: .  (EH 9/2016 Comment: How is this different from Display neme see below?  )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.mnemonic">
@@ -889,7 +889,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.report--&gt;DiagnosticReport. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.report--&gt;DiagnosticReport.root {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.displayName">
@@ -913,7 +913,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.report.displayName--&gt;DiagnosticReport. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.report.displayName--&gt;DiagnosticRequest|DiagnosticReport|Observation..code.text {|} Rule: use in Obs if atomic test name.  (EH 9/2016 Comment: This along with mapping code above identifies the DR/ Obs depends on whether panel or not)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.subheading">
@@ -936,7 +936,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.report.subheading--&gt;DiagnosticReport. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.report.subheading--&gt;DiagnosticReport.extension type Reference(DiagnosticRequest) 0..*   {|} Rule: .  (EH 9/2016 Comment: extension.valueReference.display,  asume only used in  reports not obs)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.report.displayOrder">
@@ -959,7 +959,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.report.displayOrder--&gt;DiagnosticReport. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.report.displayOrder--&gt;DiagnosticReport.extension {|} Rule: .  (EH 9/2016 Comment: This is more like a composition concept instead of DR - discuss)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement">
@@ -978,7 +978,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement--&gt;Observation.root {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.method">
@@ -1009,7 +1009,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.method--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.method--&gt;Observation..method {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.datatypes">
@@ -1059,7 +1059,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.datatypes--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.datatypes--&gt;Observation.(value type) {|} Rule: .  (EH 9/2016 Comment: not sure how to map this)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.AnswerList">
@@ -1085,7 +1085,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.AnswerList--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.AnswerList--&gt;ValueSet..compose.include.concept {|} Rule: .  (EH 9/2016 Comment: binding to .valueCodeableConcept.)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Normals">
@@ -1113,7 +1113,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.Normals--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.Normals--&gt;Observation..referenceRange.text {|} Rule: Observation.referenceRange.meaning = &quot;normal&quot;.  (EH 9/2016 Comment: for nowlist in the ref range text element - future add extension for Valueset)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Abnormals">
@@ -1140,7 +1140,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.Abnormals--&gt;Observation. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.Abnormals--&gt;Observation..referenceRange.text {|} Rule: Observation.referenceRange.meaning = &quot;abnormal&quot;.  (EH 9/2016 Comment: for nowlist in the ref range text element - future add extension for Valueset)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.Critical">
