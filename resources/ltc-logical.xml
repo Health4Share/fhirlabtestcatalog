@@ -1271,7 +1271,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.precision--&gt;Observation..valueQuantity.value {|} Rule: invarient with regex mask.  (EH 9/2016 Comment: for other numeric resulted value types as well )"/>
+				<map value="LabTestCatalog.entry.measurement.precision--&gt;Observation.valueQuantity.value {|} Rule: invarient with regex mask.  (EH 9/2016 Comment: for other numeric resulted value types as well )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.referenceRange">
@@ -1299,7 +1299,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.referenceRange--&gt;Observation..referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;normal&quot;.  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.referenceRange--&gt;Observation.referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;normal&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.criticalReferenceRange">
@@ -1326,7 +1326,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.criticalReferenceRange--&gt;Observation..referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;critical&quot;.  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.criticalReferenceRange--&gt;Observation.referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;critical&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.absoluteReferenceRange">
@@ -1353,7 +1353,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.absoluteReferenceRange--&gt;Observation..referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;absolute&quot;.  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.absoluteReferenceRange--&gt;Observation.referenceRange {|} Rule: Observation.referenceRange.meaning = &quot;absolute&quot;.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.measurement.performingLab">
@@ -1381,7 +1381,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.measurement.performingLab--&gt;Observation..performer.Reference(Organization) {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.measurement.performingLab--&gt;Observation.performer.Reference(Organization) {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation">
@@ -1409,7 +1409,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation--&gt;ActivityDefinition..relatedResources type=composed-of Reference(Questionnaire) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation--&gt;ActivityDefinition.relatedResources type=composed-of Reference(Questionnaire) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.code">
@@ -1437,7 +1437,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.code--&gt;Questionnaire.Questionnaire.item.concept {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.code--&gt;Questionnaire.item.concept {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.whenAsk">
@@ -1464,7 +1464,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.whenAsk--&gt;Questionnaire.Questionnaire.useContext {|} Rule: single questionnaire for each provider role each filling in her part.  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.whenAsk--&gt;Questionnaire.useContext {|} Rule: single questionnaire for each provider role each filling in her part.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.required">
@@ -1492,7 +1492,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.required--&gt;Questionnaire.Questionnaire.item.required {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.required--&gt;Questionnaire.item.required {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.hint">
@@ -1519,7 +1519,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.hint--&gt;Questionnaire.Questionnaire.item.text {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.hint--&gt;Questionnaire.item.text {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerType">
@@ -1550,7 +1550,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.answerType--&gt;Questionnaire.Questionnaire.item.type {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.answerType--&gt;Questionnaire.item.type {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.multiples">
@@ -1577,7 +1577,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.multiples--&gt;Questionnaire.Questionnaire.item.repeats {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.multiples--&gt;Questionnaire.item.repeats {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerList">
@@ -1605,7 +1605,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.answerList--&gt;Questionnaire.Questionnaire.item.options {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.answerList--&gt;Questionnaire.item.options {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.length">
@@ -1632,7 +1632,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.length--&gt;Questionnaire.Questionnaire.item.maxLength {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.length--&gt;Questionnaire.item.maxLength {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.precision">
@@ -1659,7 +1659,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.precision--&gt;Questionnaire.Questionnaire.extension(http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces) {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.precision--&gt;Questionnaire.extension(http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces) {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen">
@@ -1687,7 +1687,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen--&gt;ActivityDefinition..relatedResources type=composed-of Reference(Specimen) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen--&gt;ActivityDefinition.relatedResources type=composed-of Reference(Specimen) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.type">
@@ -1718,7 +1718,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.type--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.type--&gt;Specimen.type {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container">
@@ -1741,7 +1741,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.container--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.container--&gt;Specimen.container {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.type">
@@ -1764,7 +1764,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.container.type--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.container.type--&gt;Specimen.container.type {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.volume">
@@ -1787,7 +1787,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.container.volume--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.container.volume--&gt;Specimen.container.capacity {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.container.preferrence">
@@ -1814,7 +1814,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.container.preferrence--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.container.preferrence--&gt;Specimen.container.extension type boolean 0..1 {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.additve">
@@ -1841,7 +1841,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.additve--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.additve--&gt;Specimen.treatment.additive or container.additive[x] {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.collectionVolume">
@@ -1868,7 +1868,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.collectionVolume--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.collectionVolume--&gt;Specimen.collection.quantity {|} Rule: .  (EH 9/2016 Comment: add this to the description of the field?)"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.minimumCollectionVolume">
@@ -1895,7 +1895,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.minimumCollectionVolume--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.minimumCollectionVolume--&gt;Specimen.collection.quantity {|} Rule: .  (EH 9/2016 Comment: have this as an invariant.  (e.g   &gt;=  1.0 ml))"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.requirements">
@@ -1918,7 +1918,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.requirements--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.requirements--&gt;Specimen.note {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.handling">
@@ -1945,7 +1945,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.handling--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.handling--&gt;Specimen.extension(ttp://hl7.org/fhir/StructureDefinition/specimen-specialHandling) {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen.preference">
@@ -1967,7 +1967,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.specimen.preference--&gt;Specimen. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.specimen.preference--&gt;ActivityDefinition.extension {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic">
@@ -1984,7 +1984,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.chargeCharacteristic--&gt;ActivityDefinition..relatedResources type=composed-of Reference(??) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.chargeCharacteristic--&gt;ActivityDefinition.relatedResources type=composed-of Reference(??) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.shortName">
@@ -2008,7 +2008,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.chargeCharacteristic.shortName--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.chargeCharacteristic.shortName--&gt;Claim.item.service.display {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.longName">
@@ -2032,7 +2032,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.chargeCharacteristic.longName--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.chargeCharacteristic.longName--&gt;Claim.item.service.extension type = string 0..1 {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.code">
@@ -2063,7 +2063,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.chargeCharacteristic.code--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.chargeCharacteristic.code--&gt;Claim.item.service.code {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.chargeCharacteristic.price">
@@ -2090,7 +2090,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.chargeCharacteristic.price--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.chargeCharacteristic.price--&gt;Claim.item.unitPrice {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy">
@@ -2107,7 +2107,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy--&gt;Claim. {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.healthPlan">
@@ -2131,7 +2131,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.healthPlan--&gt;ActivityDefinition..relatedResources type=composed-of Reference(??) 0..* {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.healthPlan--&gt;Claim.insurerIdentifier {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.InsCompany">
@@ -2156,7 +2156,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.InsCompany--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.InsCompany--&gt;Claim.insurerIdentifier {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.priceRange">
@@ -2180,7 +2180,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.priceRange--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.priceRange--&gt;Claim.coverage.coverageIdentifier {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.reason">
@@ -2203,7 +2203,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.reason--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.reason--&gt;Claim.extension {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures">
@@ -2230,7 +2230,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures--&gt;Claim. {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode">
@@ -2261,7 +2261,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures.dxCode--&gt;Claim.diagnosis.diagnosis {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode">
@@ -2292,7 +2292,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode--&gt;??. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.payerPolicy.approvedProcedures.pxCode--&gt;Claim.procedure.procedure[x] {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 	</differential>
