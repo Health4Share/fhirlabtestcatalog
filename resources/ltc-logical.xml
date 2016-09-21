@@ -1437,7 +1437,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.code--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.code--&gt;Questionnaire.Questionnaire.item.concept {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.whenAsk">
@@ -1464,7 +1464,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.whenAsk--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.whenAsk--&gt;Questionnaire.Questionnaire.useContext {|} Rule: single questionnaire for each provider role each filling in her part.  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.required">
@@ -1492,7 +1492,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.required--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.required--&gt;Questionnaire.Questionnaire.item.required {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.hint">
@@ -1519,7 +1519,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.hint--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.hint--&gt;Questionnaire.Questionnaire.item.text {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerType">
@@ -1550,7 +1550,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.answerType--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.answerType--&gt;Questionnaire.Questionnaire.item.type {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.multiples">
@@ -1577,7 +1577,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.multiples--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.multiples--&gt;Questionnaire.Questionnaire.item.repeats {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.answerList">
@@ -1605,7 +1605,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.answerList--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.answerList--&gt;Questionnaire.Questionnaire.item.options {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.length">
@@ -1632,7 +1632,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.length--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.length--&gt;Questionnaire.Questionnaire.item.maxLength {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.supportingInformation.precision">
@@ -1659,7 +1659,7 @@
 			</mapping>
 			<mapping>
 				<identity value="fhir-mapping"/>
-				<map value="LabTestCatalog.entry.supportingInformation.precision--&gt;Questionnaire. {|} Rule: .  (EH 9/2016 Comment: )"/>
+				<map value="LabTestCatalog.entry.supportingInformation.precision--&gt;Questionnaire.Questionnaire.extension(http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces) {|} Rule: .  (EH 9/2016 Comment: )"/>
 			</mapping>
 		</element>
 		<element id="LabTestCatalog.entry.specimen">
